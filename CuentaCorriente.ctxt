@@ -1,0 +1,41 @@
+#BlueJ class context
+comment0.target=CuentaCorriente
+comment0.text=\r\n\ Clase\ que\ representa\ una\ cuenta\ corriente\ bancaria,\ contiene\ los\ atributos\:\ nroCuenta,\ saldo,\r\n\ limiteDescubierto\ y\ titular,\ ademas\ de\ los\ constructres\ y\ los\ accessors,\ cuenta\ con\ metodos\r\n\ que\ le\ permiten\ extraer\ dinero,\ depositar\ dinero\ y\ mostrar\ su\ estado.\r\n\ \r\n\ @author\ Pannunzio\ M.\ Nicolas\ -\ Quintana\ Antonio\ \r\n\ @version\ 24/08/25\r\n
+comment1.params=p_nroCuenta\ p_titular
+comment1.target=CuentaCorriente(int,\ Persona)
+comment1.text=\r\n\ Constructor\ que\ recibe\ solo\ NroCuenta\ y\ titular,\ inicializa\ saldo\=0\ y\ limiteDescubierto\=\ 500\r\n
+comment10.params=
+comment10.target=double\ getLimiteDescubierto()
+comment11.params=p_importe
+comment11.target=boolean\ puedoExtraer(double)
+comment11.text=\r\n\ Verifica\ si\ se\ puede\ realizar\ la\ extraccion,\ si\ el\ importe\ recibido\ por\ parametro\ NO\ \r\n\ supera\ el\ saldo\ mas\ el\ limiteDescubierto\r\n\ @param\ importe\ que\ se\ quiere\ extraer\r\n\ @return\ TRUE\ si\:\ p_importe\ <\ (saldo\ +\ limiteDescubierto)\r\n
+comment12.params=p_importe
+comment12.target=void\ extraccion(double)
+comment12.text=\r\n\ Realiza\ la\ extraccion,\ en\ caso\ de\ que\ el\ importe\ sea\ mayor\ al\ saldo,\ saldo\ queda\ en\ 0\ y\ se\ resta\ lo\ que\ corresponde\r\n\ a\ limiteDescubierto.\ Si\ el\ importe\ no\ es\ mayor\ a\ saldo\ simplemente\ se\ le\ resta\ a\ este.\r\n\ @param\ importe\ a\ extraer.\r\n
+comment13.params=p_importe
+comment13.target=void\ extraer(double)
+comment13.text=\r\n\ Recibe\ un\ importe\ a\ extraer,\ mediante\ el\ metodo\ puedoExtraer()\ verifica\ si\ es\ posible,\ en\ caso\ de\ serlo\ realiza\r\n\ la\ extraccion\ con\ el\ metodo\ extraccion(),\ si\ no\ imprimer\ en\ pantalla\ un\ mensaje\ acorde.\r\n\ @param\ importe\ a\ extraer\ e\ caso\ de\ ser\ posible.\r\n
+comment14.params=p_importe
+comment14.target=void\ depositar(double)
+comment14.text=\r\n\ Agrega\ un\ importe\ al\ saldo\ actual\r\n\ @param\ importe\ que\ se\ sumara\ al\ saldo\r\n
+comment15.params=
+comment15.target=void\ mostrar()
+comment15.text=\r\n\ Muestra\ en\ pantalla\ los\ estados\ de\ la\ cuenta\ corriente.\r\n
+comment2.params=p_nroCuenta\ p_titular\ p_saldo
+comment2.target=CuentaCorriente(int,\ Persona,\ double)
+comment2.text=\r\n\ Constructor\ que\ recibe\ solo\ NroCuenta,titular\ y\ saldo.\ inicializa\ limiteDescubierto\=\ 500\r\n
+comment3.params=p_nroCuenta
+comment3.target=void\ setNroCuenta(int)
+comment4.params=p_titular
+comment4.target=void\ setTitular(Persona)
+comment5.params=p_saldo
+comment5.target=void\ setSaldo(double)
+comment6.params=p_limiteDescubierto
+comment6.target=void\ setLimiteDescubierto(double)
+comment7.params=
+comment7.target=int\ getNroCuenta()
+comment8.params=
+comment8.target=Persona\ getTitular()
+comment9.params=
+comment9.target=double\ getSaldo()
+numComments=16

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=CrearPunto
+comment0.text=\r\n\ CrearPunto\ instancia\ objetos\ de\ tipo\ Punto\ y\ prueba\ exhaustivamente\ sus\ metodos.\r\n\ \r\n\ @author\ Pannunzio\ M.\ Nicolas\ -\ Quintana\ Antonio\ \ \r\n\ @version\ 27/08/25\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ main\ donde\ se\ instancia\ y\ prueban\ los\ metodos\ de\ los\ objetos\ tipo\ Punto\r\n
+numComments=2

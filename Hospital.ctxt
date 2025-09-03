@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Hospital
+comment0.text=\r\n\ Clase\ que\ modela\ un\ hospital,\ cuenta\ con\ atributos\ como\ nombre\ del\ hospital\ y\ nombre\ del\ director.\r\n\ Ademas\ de\ los\ constructores\ y\ los\ accesors\ cuenta\ con\ m\u00E9todos\ que\ permiten\ mostrar\ los\ datos\ del\ hospital.\r\n\ \r\n\ @author\ Pannunzio\ M.\ Nicolas\ -\ Quintana\ Antonio\ \r\n\ @version\ 01/09/25\r\n
+comment1.params=p_nombreHospital\ p_nombreDirector
+comment1.target=Hospital(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ que\ recibe\ todos\ los\ atributos\ como\ parametro\r\n
+comment2.params=p_nombreHospital
+comment2.target=void\ setNombreHospital(java.lang.String)
+comment3.params=p_nombreDirector
+comment3.target=void\ setNombreDirector(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getNombreHospital()
+comment5.params=
+comment5.target=java.lang.String\ getNombreDirector()
+comment6.params=p_paciente
+comment6.target=void\ consultaDatosFiliatorios(Paciente)
+comment6.text=\r\n\ Muestra\ en\ pantalla\ los\ datos\ del\ hospital\ junto\ con\ los\ del\ paciente\ pasado\ por\ parametro\r\n\ @param\ Paciente\ cuyos\ datos\ se\ mostraran\ en\ pantalla\r\n
+numComments=7

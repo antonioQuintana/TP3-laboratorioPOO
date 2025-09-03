@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Empresa
+comment0.text=\r\n\ Clase\ ejecutable,\ en\ la\ que\ se\ instancia\ y\ prueban\ todos\ los\ metodos\r\n\ de\ la\ clase\ Empleado.\r\n\ @author\ Pannunzio\ M.\ Nicolas\ -\ Quintana\ Antonio\r\n\ @version\ 24/08/25\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2

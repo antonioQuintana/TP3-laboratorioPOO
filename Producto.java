@@ -1,15 +1,14 @@
 
 /**
- * La clase producto modela un objeto de nombre Producto con varios atributos propios y colabora con otro objeto
- * ya definido que es Laboratorio, ademas de los Accessors esta clase posee metodos que permiten calcular y mostrar
- * los precios de lista y de contado del producto, asi como imprimir leyendas con los datos del laboratorio y demas.
+ * Producto contiene como atributos los elementos basicos de un producto (Descripcion, costo, stock, entre otros)
+ * Permite mostrar sus datos en pantalla, y ajustar sus valores.
  * 
- * @author (Antonio Quintana) 
- * @version (1.0 -- 25/08/25)
+ * @author Pannunzio M. Nicolas - Quintana Antonio
+ * @version 18/08/25
  */
 public class Producto
 {
-    // instance variables - replace the example below with your own
+    //Variables de instancia
     private int codigo;
     private String rubro;
     private String descripcion;
@@ -20,145 +19,176 @@ public class Producto
     private Laboratorio laboratorio;
     
     /**
-     * Constructor for objects of class Producto
+     * Constructor que recibe todos los atributos como parametros, menos el stock que se inicializa en 0
      */
-    public Producto(int p_codigo, String p_rubro, String p_desc, double p_costo, double p_porcPtoRepo, 
-                    int p_existMinima, Laboratorio p_lab){
+    public Producto(int p_codigo, String p_rubro, String p_desc, double p_costo, 
+                    double p_porcPtoRepo, int p_existMinima, Laboratorio p_lab){
         this.setCodigo(p_codigo);
         this.setRubro(p_rubro);
-        this.setDesc(p_desc);
+        this.setDescripcion(p_desc);
         this.setCosto(p_costo);
+        this.setStock(0);
         this.setPorcPtoRepo(p_porcPtoRepo);
         this.setExistMinima(p_existMinima);
-        this.setLab(p_lab);
-        //incializamos variables que no se pasan por arg
-        this.setStock(0);
+        this.setLaboratorio(p_lab);
     }
+    
     /**
-     * Segundo constructor de Producto
+     * Constructor sobrecargado que recibe solo codigo, rubro, descripcion, costo y laboratorio
+     * como parametros, los demas atributos los inicializa en 0
      */
     public Producto(int p_codigo, String p_rubro, String p_desc, double p_costo, Laboratorio p_lab){
         this.setCodigo(p_codigo);
         this.setRubro(p_rubro);
-        this.setDesc(p_desc);
+        this.setDescripcion(p_desc);
         this.setCosto(p_costo);
-        this.setLab(p_lab);
-        //incializamos variables que no se pasan por arg
         this.setStock(0);
         this.setPorcPtoRepo(0);
         this.setExistMinima(0);
+        this.setLaboratorio(p_lab);
     }
-    //Setters ----
+    
+    //Setters ------------------------------
     private void setCodigo(int p_codigo){
         this.codigo = p_codigo;
     }
+    
     private void setRubro(String p_rubro){
         this.rubro = p_rubro;
     }
-    private void setDesc(String p_desc){
+    
+    private void setDescripcion(String p_desc){
         this.descripcion = p_desc;
     }
+    
     private void setCosto(double p_costo){
         this.costo = p_costo;
     }
+    
     private void setStock(int p_stock){
         this.stock = p_stock;
     }
+    
     private void setPorcPtoRepo(double p_porcPtoRepo){
         this.porcPtoRepo = p_porcPtoRepo;
     }
+    
     private void setExistMinima(int p_existMinima){
         this.existMinima = p_existMinima;
     }
-    private void setLab(Laboratorio p_lab){
+    
+    private void setLaboratorio(Laboratorio p_lab){
         this.laboratorio = p_lab;
     }
-    //Getters ----
+    
+    //Getters ------------------------------
     public int getCodigo(){
-        return this.codigo ;
+        return this.codigo;
     }
+    
     public String getRubro(){
-        return this.rubro ;
+        return this.rubro;
     }
+    
     public String getDescripcion(){
-        return this.descripcion ;
+        return this.descripcion;
     }
+    
     public double getCosto(){
-        return this.costo ;
+        return this.costo;
     }
+    
     public int getStock(){
-        return this.stock ;
+        return this.stock;
     }
+    
     public double getPorcPtoRepo(){
-        return this.porcPtoRepo ;
+        return this.porcPtoRepo;
     }
+    
     public int getExistMinima(){
-        return this.existMinima ;
+        return this.existMinima;
     }
+    
     public Laboratorio getLaboratorio(){
-        return this.laboratorio ;
+        return this.laboratorio;
     }
+    
     /**
-     * Ajuste permite aumentar o disminuir el stock del producto
-     * @param p_cantidad modifica el stock en esa cantidad
-     */
-    public void ajuste(int p_cantidad){
-        this.setStock(this.stock + p_cantidad);
-    }
-    /**
-     * stockValorizado devuelve el resultado de multiplicar el stock por el precio de costo mas una rentabilidad
-     * del doce porciento
-     * @return stock * precio de costo + 12%
-     */
-    public double stockValorizado(){
-        return this.getStock()*this.getCosto()*1.12;
-        //multiplicar por 1 es el 100% y por 1.12 -> 112% es decir, el valor mas el 12%;
-    }
-    /**
-     * devuelve el precio de lista sumando 12% al precio de costo
-     * @return precio de lista sumando 12% al costo
-     */
-    public double precioLista(){
-        return this.getCosto()*1.12;
-    }
-    /**
-     * devuelve el precio de contado restando 5% al precio de lista
-     * @return precio de contado restando 5% al precio de lista
-     */
-    public double precioContado(){
-        return this.precioLista()*0.95;
-    }    
-    /**
-     * Mostrar imprime una leyenda con los datos del laboratorio y del producto
+     * Muestra en pantalla todos los datos relevantes del producto (Costo, stock, laboratorio, entre otros)
      */
     public void mostrar(){
-        System.out.println("Laboratorio: " + this.getLaboratorio().getNombre());
-        System.out.println("Domicilio: " + this.getLaboratorio().getDomicilio() + " - Telefono: "
-                            + this.getLaboratorio().getTelefono() + "\n");
-        
-        System.out.println("Rubro: " + this.getRubro());
-        System.out.println("Descripcion: " + this.getDescripcion());
-        System.out.println("Precio Costo: " + this.getCosto());
-        System.out.println("Stock: " + this.getStock()  + " - Stock Valorizado: $" + String.format("%.2f",this.stockValorizado()));
+        //Manda el mensaje mostrar() a laboratorio, que devuelve un string con Nombre, domicilio y tel.
+        System.out.println("\n"+ this.getLaboratorio().mostrar() +"\n\nRubro: "+ this.getRubro()   //Sigue en la sig linea
+                           +"\nDescripcion: "+ this.getDescripcion() +"\nPrecio Costo: "+    //Sigue en la sig linea
+                           this.getCosto() +"\nStock: "+ this.getStock()                     //Sigue en la sig linea
+                           +" - Stock Valorizado: $"+ (this.getStock() * this.getCosto()) ); 
     }
+    
     /**
-     * Mostra LINEA retorna la descripcion y los precios de lista y contado.
-     * @return retorna descripcion, precio de lista y de contado
+     * Modifica el Stock (Agrega o quita) segun el valor del parametro.
+     * @param Un entero cuyo valora se sumara o restara al stock
+     */
+    public void ajuste(int p_cantidad){
+        this.setStock(this.getStock() + p_cantidad);
+    }
+    
+    /**
+     * Calcula el costo total de todo el stock y devuelve ese valor + una rentabilidad del 12%
+     * @return El costo total de todo el stock + 12%
+     */
+    public double stockValorizado(){
+        double costoStock = this.getStock() * this.getCosto();
+        return costoStock + (costoStock * 12 / 100); 
+    }
+    
+    /**
+     * Calcula y devuelve el costo unitario mas un 12% de rentabilidad
+     * @return Precio de costo + 12%
+     */
+    public double precioLista(){
+        return this.getCosto() + (this.getCosto() * 12 / 100);
+    }
+    
+    /**
+     * Calcula y devuelve el precio contado, que es el precio de lista - 5%
+     * @return precio de lista - 5%
+     */
+    public  double precioContado(){
+        return this.precioLista() - (this.precioLista() * 5 / 100);
+    }
+    
+    /**
+     * Concatena y devuelve en un string la descripcion, el precio de lista y el precio contado
+     * @return String con Descripcio + Precio de lista + precio al contado
      */
     public String mostrarLinea(){
-        return this.getDescripcion()+" "+String.format("$%.2f", this.precioLista())+" "+String.format("$%.2f", this.precioContado());
+        return "\n"+ this.getDescripcion() +"   "+ this.precioLista() +"   "+ this.precioContado();
     }
-    //Setters publicos ----
+    
     /**
-     * Permite volver a setear el valor del porcPtoRepo
+     * Permite modificar el valor del porcentaje de punto de reposicion (porcPtoRepo)
+     * asignandole el valor del parametro p_porce.
      */
     public void ajustarPtoRepo(double p_porce){
         this.setPorcPtoRepo(p_porce);
     }
+    
     /**
-     * Permite volver a setear el valor del existMinima
+     * Permite modificar el valor de la existencia minima (existMinima)
+     * asignandole el valor del parametro p_cantidad.
      */
     public void ajustarExistMin(int p_cantidad){
         this.setExistMinima(p_cantidad);
+    }
+    
+    /**
+     * Es un metodo que no esta en el UML de la clase pero lo agregue para poder luego mostrar en pantalla
+     * los valores de los atributos porcPtoRepo y existMinima.
+     * @return El estado de los atributos porcPtoRepo y existMinima.
+     */
+    public String mostrarPtoRepoYExistMin(){
+        return "\nPorcentaje de punto de reposicion: "+ this.getPorcPtoRepo() //Sigue en la sig linea
+                +"% - Existencia Minima: "+ this.getExistMinima();
     }
 }

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=EmpleadoConJefePrueba
+comment0.text=\r\n\ Clase\ ejecutable\ para\ instanciar\ objetos\ de\ tipo\ EmpleadoConJefe\ \r\n\ y\ probar\ sus\ m\u00E9todos\ de\ manera\ exhaustiva.\r\n\r\n\ @author\ Pannunzio\ M.\ Nicolas\ -\ Quintana\ Antonio\ \r\n\ @version\ 01/09/25\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2
